@@ -25,7 +25,7 @@ module Trello
       # a different endpoint to get the value
       attributes[:option_id]       = fields['idValue'] if fields.has_key?('idValue')
       # value format: { "text": "hello world" }
-      attributes[:value]            = fields['value'] if fields.has_key?('value')
+      attributes[:value]            = fields['value'] || fields[:value] || attributes[:value]
       self
     end
 
